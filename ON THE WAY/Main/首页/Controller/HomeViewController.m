@@ -12,52 +12,83 @@
 #import "DestinationModel.h"
 #import "ListDestinationViewController.h"
 #import "BaseDestinationViewController.h"
+#import "AdvertViewController.h"
 
 #define kHomeFootViewHeight 40
 #define kHomeHeadViewHeight 30
-#define kHomeScrollViewHeight 120
+#define kHomeScrollViewHeight 180
 //间隙
 #define kHomeCellSpace 8
 //destinationView高度
 #define kHomeCellItemHeight 120
 #define kHomeCellItenWidth (kScreenWidth - 4*kHomeCellSpace)/3
 
-@interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate>
 {
     UITableView *_table;
     NSArray *_data;
     NSArray *_homeRegionArr;
     NSArray *_advertData;
+    NSArray *_imageURLStrings;
+    NSArray *_titles;
+    SDCycleScrollView *_cycleScrollView;
+    NSArray *_target_idStrings;
 }
 
 @end
 
 @implementation HomeViewController
 
+-(void)viewWillAppear:(BOOL)animated{
+    
+    //    导航栏变为透明
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:0];
+    //    让黑线消失的方法
+    self.navigationController.navigationBar.shadowImage=[UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithRed:223 green:223 blue:223 alpha:1];
+    
     [self loadData];
-    
     [self createTbale];
-    
-    
+    [self createScrollView];
     
     
 }
+
+
 
 #pragma mark - 请求数据
 -(void)loadData{
     
     NSString *urlString = @"http://q.chanyouji.com/api/v2/destinations.json";
-//    NSString *adverts = @"http://q.chanyouji.com/api/v1/adverts.json?";
+    NSString *adverts = @"http://q.chanyouji.com/api/v1/adverts.json?";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-//    [manager GET:adverts parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        NSDictionary *advertDic = (NSDictionary *)responseObject;
-//        _advertData = advertDic[@"data"];
-//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//        
-//    }];
+    [manager GET:adverts parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *advertDic = (NSDictionary *)responseObject;
+        _advertData = advertDic[@"data"];
+        NSMutableArray *mArr = [[NSMutableArray alloc]init];
+        NSMutableArray *mArr2 = [[NSMutableArray alloc]init];
+        NSMutableArray *mArr3 = [[NSMutableArray alloc]init];
+        for (NSDictionary *dic in _advertData) {
+            NSString *imageURLString = dic[@"photo"][@"photo_url"];
+            [mArr addObject:imageURLString];
+            NSString *title = dic[@"topic"];
+            [mArr2 addObject:title];
+            NSString *target_idString = dic[@"target_id"];
+            [mArr3 addObject:target_idString];
+        }
+        _imageURLStrings = [mArr copy];
+        _titles = [mArr2 copy];
+        _target_idStrings = [mArr3 copy];
+        
+        [_table reloadData];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"失败");
+    }];
     [manager GET:urlString parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"请求成功");
         NSDictionary *regionDic = (NSDictionary *)responseObject;
@@ -80,15 +111,50 @@
     }];
 }
 
+
+#pragma mark - 表视图头视图轮播条
+
+-(void)createScrollView{
+    
+    _cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, kScreenWidth, kHomeScrollViewHeight) imageURLStringsGroup:_imageURLStrings];
+    //分页位置
+    _cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
+    _cycleScrollView.titlesGroup = _titles;
+    _cycleScrollView.pageDotColor = [UIColor whiteColor];
+    _cycleScrollView.delegate = self;
+    //作为头视图
+    _table.tableHeaderView = _cycleScrollView;
+    
+    //         --- 模拟加载延迟
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        _cycleScrollView.imageURLStringsGroup = _imageURLStrings;
+    });
+    
+}
+
+#pragma mark - SDCycleScrollViewDelegate
+
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
+{
+    NSLog(@"---点击了第%ld张图片", (long)index);
+    AdvertViewController *advertView = [[AdvertViewController alloc]init];
+//    advertView.urlString = [NSString stringWithFormat:@"http://q.chanyouji.com/api/v1/albums/%@.json",_target_idStrings[index]];
+    advertView.urlString = @"http://web.breadtrip.com/mobile/destination/topic/2387718764/";
+    advertView.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:advertView animated:YES];
+}
+
 #pragma mark - 表视图
 
 -(void)createTbale{
     
-    _table = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 64) style:UITableViewStyleGrouped];
+    _table = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) style:UITableViewStyleGrouped];
     _table.delegate = self;
     _table.backgroundColor = [UIColor colorWithRed:196/255.0 green:206/255.0 blue:206/255.0 alpha:1];
     _table.dataSource = self;
 //    _table.backgroundColor = [UIColor orangeColor];
+    //设置内容偏移量
+    _table.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
     
     [self.view addSubview:_table];
 }

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180115281DC199FD0069F63E /* AdvertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180115261DC199FD0069F63E /* AdvertViewController.m */; };
+		180115291DC199FD0069F63E /* AdvertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180115271DC199FD0069F63E /* AdvertViewController.xib */; };
+		1801152C1DC1CAF40069F63E /* TravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1801152B1DC1CAF40069F63E /* TravelViewController.m */; };
+		180115301DC1ECAA0069F63E /* FirstActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1801152E1DC1ECAA0069F63E /* FirstActivityTableViewCell.m */; };
+		180115311DC1ECAA0069F63E /* FirstActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1801152F1DC1ECAA0069F63E /* FirstActivityTableViewCell.xib */; };
 		18F85F7F1DC0C0600007044F /* BaseDestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F85F7B1DC0C0600007044F /* BaseDestinationViewController.m */; };
 		18F85F801DC0C0600007044F /* BaseDestinationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F85F7C1DC0C0600007044F /* BaseDestinationViewController.xib */; };
 		18F85F811DC0C0600007044F /* BaseDestinationViewController+LoadData.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F85F7E1DC0C0600007044F /* BaseDestinationViewController+LoadData.m */; };
@@ -404,6 +409,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		180115251DC199FD0069F63E /* AdvertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertViewController.h; sourceTree = "<group>"; };
+		180115261DC199FD0069F63E /* AdvertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertViewController.m; sourceTree = "<group>"; };
+		180115271DC199FD0069F63E /* AdvertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvertViewController.xib; sourceTree = "<group>"; };
+		1801152A1DC1CAF40069F63E /* TravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravelViewController.h; sourceTree = "<group>"; };
+		1801152B1DC1CAF40069F63E /* TravelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravelViewController.m; sourceTree = "<group>"; };
+		1801152D1DC1ECAA0069F63E /* FirstActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstActivityTableViewCell.h; sourceTree = "<group>"; };
+		1801152E1DC1ECAA0069F63E /* FirstActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstActivityTableViewCell.m; sourceTree = "<group>"; };
+		1801152F1DC1ECAA0069F63E /* FirstActivityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstActivityTableViewCell.xib; sourceTree = "<group>"; };
 		18F85F7A1DC0C0600007044F /* BaseDestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDestinationViewController.h; sourceTree = "<group>"; };
 		18F85F7B1DC0C0600007044F /* BaseDestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDestinationViewController.m; sourceTree = "<group>"; };
 		18F85F7C1DC0C0600007044F /* BaseDestinationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseDestinationViewController.xib; sourceTree = "<group>"; };
@@ -944,11 +957,16 @@
 		18F85F9A1DC0C0B50007044F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1801152A1DC1CAF40069F63E /* TravelViewController.h */,
+				1801152B1DC1CAF40069F63E /* TravelViewController.m */,
 				18F85F9B1DC0C0B50007044F /* HomeViewController.h */,
 				18F85F9C1DC0C0B50007044F /* HomeViewController.m */,
 				18F85F9D1DC0C0B50007044F /* ListDestinationViewController.h */,
 				18F85F9E1DC0C0B50007044F /* ListDestinationViewController.m */,
 				18F85F9F1DC0C0B50007044F /* ListDestinationViewController.xib */,
+				180115251DC199FD0069F63E /* AdvertViewController.h */,
+				180115261DC199FD0069F63E /* AdvertViewController.m */,
+				180115271DC199FD0069F63E /* AdvertViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -994,6 +1012,9 @@
 				18F85FB91DC0C0B50007044F /* WikiCell.h */,
 				18F85FBA1DC0C0B50007044F /* WikiCell.m */,
 				18F85FBB1DC0C0B50007044F /* WikiCell.xib */,
+				1801152D1DC1ECAA0069F63E /* FirstActivityTableViewCell.h */,
+				1801152E1DC1ECAA0069F63E /* FirstActivityTableViewCell.m */,
+				1801152F1DC1ECAA0069F63E /* FirstActivityTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1826,6 +1847,7 @@
 				18F860CA1DC0C4360007044F /* train_icon_service_12306_account@2x.png in Resources */,
 				D4E8D39A1DAF971200646A0F /* bg_login@3x.png in Resources */,
 				18F860161DC0C4270007044F /* CategoryIcon9@2x.png in Resources */,
+				180115311DC1ECAA0069F63E /* FirstActivityTableViewCell.xib in Resources */,
 				D406B8EC1DB105A40057C933 /* train_ico_passenger_english_switch@2x.png in Resources */,
 				D406B8CD1DB105A40057C933 /* flight_ico_list_price@3x.png in Resources */,
 				D4E8D3E31DAF971200646A0F /* tab_record_on.png in Resources */,
@@ -1844,6 +1866,7 @@
 				18F860941DC0C4360007044F /* anime_loading_plane0011@2x.png in Resources */,
 				D4E8D3D81DAF971200646A0F /* tab_me_en@2x.png in Resources */,
 				D4E8DBA41DB7111F00FD8C34 /* titlebar_button_back_9@2x.png in Resources */,
+				180115291DC199FD0069F63E /* AdvertViewController.xib in Resources */,
 				D4E8D3D41DAF971200646A0F /* tab_me.png in Resources */,
 				D4E8D3CF1DAF971200646A0F /* tab_home_on@2x.png in Resources */,
 				18F85FFA1DC0C4270007044F /* CategoryIcon0@2x.png in Resources */,
@@ -2124,6 +2147,7 @@
 				D4E8DA5A1DB1F4B500BD483D /* AFURLRequestSerialization.m in Sources */,
 				D46A3AD71DADC8F4006D497F /* BaseTabBarController.m in Sources */,
 				D4E26F091DBE05200033E7E6 /* YYClassInfo.m in Sources */,
+				180115301DC1ECAA0069F63E /* FirstActivityTableViewCell.m in Sources */,
 				D4E8DA591DB1F4B500BD483D /* AFSecurityPolicy.m in Sources */,
 				D4DF77841DBF0280008ED5BF /* WXCircleProgressView.m in Sources */,
 				D4E26EC31DBDD3DB0033E7E6 /* UserModel.m in Sources */,
@@ -2155,6 +2179,7 @@
 				D46A3ADD1DADC978006D497F /* TravelsViewController.m in Sources */,
 				D4E26EFF1DBDEECE0033E7E6 /* UIImageView+HighlightedWebCache.m in Sources */,
 				18F85FBD1DC0C0B50007044F /* ListDestinationViewController.m in Sources */,
+				180115281DC199FD0069F63E /* AdvertViewController.m in Sources */,
 				D46A3AE71DADCB30006D497F /* ToolViewController.m in Sources */,
 				D4DF77861DBF0280008ED5BF /* WXPhotoBrowser.m in Sources */,
 				D4E26F081DBE05200033E7E6 /* NSObject+YYModel.m in Sources */,
@@ -2166,6 +2191,7 @@
 				18F85F931DC0C0A10007044F /* TAAnimatedDotView.m in Sources */,
 				18F85FC41DC0C0B50007044F /* HomeRegion.m in Sources */,
 				D46A3AD41DADC8CF006D497F /* BaseViewController.m in Sources */,
+				1801152C1DC1CAF40069F63E /* TravelViewController.m in Sources */,
 				D4DF77851DBF0280008ED5BF /* WXPhoto.m in Sources */,
 				D4E26EF71DBDEECE0033E7E6 /* SDWebImageDownloader.m in Sources */,
 				D46A3AA51DADC73C006D497F /* main.m in Sources */,

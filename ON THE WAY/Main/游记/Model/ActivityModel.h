@@ -17,5 +17,6 @@
 @property (nonatomic , strong)NSNumber *level;
 @property (nonatomic , copy)NSString *des;                    //描述
 @property (nonatomic , copy)NSMutableArray *contents;         //图片数组
+//用户信息
 @property (nonatomic , strong)UserModel *user;
 @end

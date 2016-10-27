@@ -22,19 +22,19 @@
     // Do any additional setup after loading the view.
 }
 
-#pragma mark - 导航栏透明半透明设置
+#pragma mark - 导航栏背景设置
 
--(void)viewWillAppear:(BOOL)animated{
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"mask_titlebar64@2x.png"] forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.translucent = NO;
-}
-
--(void)viewWillDisappear:(BOOL)animated{
-    //    导航栏变为透明
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:0];
-    //    让黑线消失的方法
-    self.navigationController.navigationBar.shadowImage=[UIImage new];
-}
+//-(void)viewWillAppear:(BOOL)animated{
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"mask_titlebar64@2x.png"] forBarMetrics:UIBarMetricsDefault];
+//    self.navigationController.navigationBar.translucent = NO;
+//}
+//
+//-(void)viewWillDisappear:(BOOL)animated{
+//    //    导航栏变为透明
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:0];
+//    //    让黑线消失的方法
+//    self.navigationController.navigationBar.shadowImage=[UIImage new];
+//}
 //自定义返回按钮
 - (void)createBackButton {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];

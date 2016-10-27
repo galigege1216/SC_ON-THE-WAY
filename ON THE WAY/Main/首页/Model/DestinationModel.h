@@ -16,5 +16,6 @@
 @property(nonatomic,copy)NSString *destination_id;  //id:109
 @property(nonatomic,copy)NSString *path;    //.1.5.109.
 @property(nonatomic,copy)NSString *level;   //3
+@property(nonatomic,copy)NSString *district_id;
 
 @end

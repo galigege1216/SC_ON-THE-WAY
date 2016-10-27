@@ -22,7 +22,7 @@
             </objects>
             <point key="canvasLocation" x="-306" y="375"/>
         </scene>
-        <!--首页-->
+        <!--Home View Controller-->
         <scene sceneID="bK5-YB-pVD">
             <objects>
                 <viewController id="ECf-i1-FZR" customClass="HomeViewController" sceneMemberID="viewController">
@@ -36,7 +36,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="首页" id="gtL-qj-erH"/>
+                    <navigationItem key="navigationItem" id="gtL-qj-erH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U8M-os-eRq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

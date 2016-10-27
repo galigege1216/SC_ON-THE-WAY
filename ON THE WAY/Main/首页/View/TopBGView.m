@@ -10,7 +10,7 @@
 #import "WikiDestinationViewController.h"
 
 
-#define kBgImageViewHeight 180
+#define kBgImageViewHeight 200
 #define kLabelHeight 20
 #define kBottomLabelHeight 40
 
@@ -64,9 +64,9 @@
     //label
     _nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, kBgImageViewHeight/2, self.bounds.size.width, kLabelHeight)];
     _nameLabel.textAlignment = NSTextAlignmentCenter;
-    _nameLabel.textColor = [UIColor blackColor];
+    _nameLabel.textColor = [UIColor whiteColor];
     _name_pinyinLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, kBgImageViewHeight/2+kLabelHeight, self.bounds.size.width, kLabelHeight)];
-    _name_pinyinLabel.textColor = [UIColor grayColor];
+    _name_pinyinLabel.textColor = [UIColor whiteColor];
     _name_pinyinLabel.textAlignment = NSTextAlignmentCenter;
     _name_pinyinLabel.font = [UIFont systemFontOfSize:12];
 //    _name_pinyinLabel.backgroundColor = [UIColor redColor];

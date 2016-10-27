@@ -8,8 +8,10 @@
 
 #import "TopDestinationViewController.h"
 #import "TopBGView.h"
-#define kTopBGViewHeight 220
-#define kBgImageViewHeight 180
+#import "TravelViewController.h"
+
+#define kTopBGViewHeight 240
+#define kBgImageViewHeight 200
 #define kLabelHeight 20
 #define kBottomLabelHeight 40
 
@@ -72,7 +74,11 @@
 //尾视图按钮点击事件
 -(void)footButtonAction:(UIButton *)btn{
     NSLog(@"列表1");
+    TravelViewController *traveVC = [[TravelViewController alloc]init];
+    traveVC.district_id = @"100007";
     
+    
+    [self.navigationController pushViewController:traveVC animated:YES];
     
 }
 

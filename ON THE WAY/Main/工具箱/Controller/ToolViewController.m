@@ -25,6 +25,19 @@
 
 @implementation ToolViewController
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self readData];
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"mask_titlebar64@2x.png"] forBarMetrics:UIBarMetricsDefault];
+//    self.navigationController.navigationBar.translucent = NO;
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+//    //    导航栏变为透明
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:0];
+//    //    让黑线消失的方法
+//    self.navigationController.navigationBar.shadowImage=[UIImage new];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self createNaviRightItem];
@@ -146,9 +159,7 @@
     }
     return YES;
 }
--(void)viewWillAppear:(BOOL)animated {
-    [self readData];
-}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

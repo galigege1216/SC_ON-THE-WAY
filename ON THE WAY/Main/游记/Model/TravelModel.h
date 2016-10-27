@@ -11,7 +11,9 @@
 #import "ActivityModel.h"
 @interface TravelModel : NSObject
 
-@property (nonatomic , copy)NSString *event_type;
+//@property (nonatomic , copy)NSString *event_type;
+//推荐人
 @property (nonatomic , strong)UserModel *user;
 @property (nonatomic , strong)ActivityModel *activity;
+
 @end

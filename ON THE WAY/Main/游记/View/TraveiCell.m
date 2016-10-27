@@ -16,7 +16,12 @@
     }
     [_iconImageView sd_setImageWithURL:[NSURL URLWithString:_model.activity.user.photo_url]];
     _userName.text =  _model.activity.user.name;
-    _userCommand.text = [NSString stringWithFormat:@"由%@推荐",_model.user.name];
+    if (!model.user) {
+        _userCommand.hidden = YES;
+    }else{
+        _userCommand.text = [NSString stringWithFormat:@"由%@推荐",_model.user.name];
+        _userCommand.hidden = NO;
+    }
     
     _imageViewArr = [[NSMutableArray alloc]init];
     NSDictionary *dic = _model.activity.contents[0];

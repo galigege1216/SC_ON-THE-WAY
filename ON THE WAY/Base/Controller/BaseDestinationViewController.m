@@ -8,8 +8,8 @@
 
 #import "BaseDestinationViewController.h"
 #import "TopBGView.h"
-#define kTopBGViewHeight 220
-#define kBgImageViewHeight 180
+#define kTopBGViewHeight 240
+#define kBgImageViewHeight 200
 #define kLabelHeight 20
 #define kBottomLabelHeight 40
 
