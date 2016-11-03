@@ -12,6 +12,8 @@
 		1801152C1DC1CAF40069F63E /* TravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1801152B1DC1CAF40069F63E /* TravelViewController.m */; };
 		180115301DC1ECAA0069F63E /* FirstActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1801152E1DC1ECAA0069F63E /* FirstActivityTableViewCell.m */; };
 		180115311DC1ECAA0069F63E /* FirstActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1801152F1DC1ECAA0069F63E /* FirstActivityTableViewCell.xib */; };
+		180115351DC215800069F63E /* DestinationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 180115331DC215800069F63E /* DestinationCell.m */; };
+		180115361DC215800069F63E /* DestinationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180115341DC215800069F63E /* DestinationCell.xib */; };
 		18F85F7F1DC0C0600007044F /* BaseDestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F85F7B1DC0C0600007044F /* BaseDestinationViewController.m */; };
 		18F85F801DC0C0600007044F /* BaseDestinationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F85F7C1DC0C0600007044F /* BaseDestinationViewController.xib */; };
 		18F85F811DC0C0600007044F /* BaseDestinationViewController+LoadData.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F85F7E1DC0C0600007044F /* BaseDestinationViewController+LoadData.m */; };
@@ -417,6 +419,9 @@
 		1801152D1DC1ECAA0069F63E /* FirstActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstActivityTableViewCell.h; sourceTree = "<group>"; };
 		1801152E1DC1ECAA0069F63E /* FirstActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstActivityTableViewCell.m; sourceTree = "<group>"; };
 		1801152F1DC1ECAA0069F63E /* FirstActivityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstActivityTableViewCell.xib; sourceTree = "<group>"; };
+		180115321DC215800069F63E /* DestinationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationCell.h; sourceTree = "<group>"; };
+		180115331DC215800069F63E /* DestinationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationCell.m; sourceTree = "<group>"; };
+		180115341DC215800069F63E /* DestinationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DestinationCell.xib; sourceTree = "<group>"; };
 		18F85F7A1DC0C0600007044F /* BaseDestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDestinationViewController.h; sourceTree = "<group>"; };
 		18F85F7B1DC0C0600007044F /* BaseDestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDestinationViewController.m; sourceTree = "<group>"; };
 		18F85F7C1DC0C0600007044F /* BaseDestinationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseDestinationViewController.xib; sourceTree = "<group>"; };
@@ -979,6 +984,9 @@
 				18F85FA31DC0C0B50007044F /* TopDestinationViewController.xib */,
 				18F85FA41DC0C0B50007044F /* WikiDestinationViewController.h */,
 				18F85FA51DC0C0B50007044F /* WikiDestinationViewController.m */,
+				180115321DC215800069F63E /* DestinationCell.h */,
+				180115331DC215800069F63E /* DestinationCell.m */,
+				180115341DC215800069F63E /* DestinationCell.xib */,
 			);
 			path = Destination;
 			sourceTree = "<group>";
@@ -2057,6 +2065,7 @@
 				D406B8DC1DB105A40057C933 /* main_translate_bar@2x.png in Resources */,
 				18F860AB1DC0C4360007044F /* anime_loading_plane0019.png in Resources */,
 				D4E8D3251DAF5CE000646A0F /* LoginViewController.xib in Resources */,
+				180115361DC215800069F63E /* DestinationCell.xib in Resources */,
 				D4E8D3BD1DAF971200646A0F /* icon_view_w_32@3x.png in Resources */,
 				D4E8D3B01DAF971200646A0F /* icon_login_user@2x.png in Resources */,
 				D4E8D3AC1DAF971200646A0F /* icon_lock_white_32.png in Resources */,
@@ -2167,6 +2176,7 @@
 				D4E8D3241DAF5CE000646A0F /* LoginViewController.m in Sources */,
 				D4DC406B1DC045CC00E18418 /* ImageCell.m in Sources */,
 				D4E26EFA1DBDEECE0033E7E6 /* SDWebImagePrefetcher.m in Sources */,
+				180115351DC215800069F63E /* DestinationCell.m in Sources */,
 				D4E26ECF1DBDE5120033E7E6 /* ContentModel.m in Sources */,
 				D4E28B171DB8867700984BB3 /* TicketModel.m in Sources */,
 				D4E26EF21DBDEECE0033E7E6 /* MKAnnotationView+WebCache.m in Sources */,

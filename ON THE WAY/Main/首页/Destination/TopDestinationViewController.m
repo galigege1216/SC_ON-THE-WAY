@@ -9,6 +9,7 @@
 #import "TopDestinationViewController.h"
 #import "TopBGView.h"
 #import "TravelViewController.h"
+#import "DestinationCell.h"
 
 #define kTopBGViewHeight 240
 #define kBgImageViewHeight 200
@@ -65,10 +66,37 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    NSDictionary *dic = self.sections[indexPath.section];
+    NSString *type = dic[@"type"];
+    
+    if ([type isEqualToString:@"Destination"]) {
+        //目的地组
+        NSArray *modelArr = dic[@"models"];
+        NSMutableArray *mArr = [[NSMutableArray alloc]init];
+        
+        for (NSDictionary *dic in modelArr) {
+            DestinationModel *model = [DestinationModel yy_modelWithJSON:dic];
+            [mArr addObject:model];
+        }
+        NSArray *models = [mArr copy];
+        
+        DestinationCell *cell = [[DestinationCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"DestinationCell"];
+        cell.models = models;
+        return cell;
+    }
+
     UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"DestinationCell"];
     cell.backgroundColor = [UIColor whiteColor];
+    
     return cell;
     
+}
+//单元格高度
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        return 150;
+    }
+    return 80;
 }
 
 //尾视图按钮点击事件

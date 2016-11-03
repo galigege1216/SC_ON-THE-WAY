@@ -18,8 +18,9 @@
     [super viewDidLoad];
     [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"mask_titlebar64@2x.png"] forBarMetrics:UIBarMetricsDefault];
     NSDictionary *dic = @{NSFontAttributeName:[UIFont systemFontOfSize:20],
-                          NSForegroundColorAttributeName:[UIColor whiteColor]};
+    NSForegroundColorAttributeName:[UIColor whiteColor]};
     self.navigationBar.titleTextAttributes = dic;
+
 //    self.navigationBar.translucent = NO;
     // Do any additional setup after loading the view.
 }

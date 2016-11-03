@@ -9,8 +9,11 @@
 #import "DestinationView.h"
 #import "TopDestinationViewController.h"
 #import "BaseDestinationViewController.h"
+
+
 #define kHomeDestinationBGViewHeight 80
 #define kLabelHeight 20
+#define topSpaceHeight 10
 
 @implementation DestinationView
 
